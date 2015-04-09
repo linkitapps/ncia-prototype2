@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* {margin: 0; padding: 0; font-family: 나눔고딕, NanumGothic !important;}
+div {box-sizing: border-box;}
+.top_btn {font-weight: 800; font-size: 14px; padding: 10px; border: 1px solid #005fb3; position: absolute; top: 20px; right: 70px; background: #6aadd5; background: -ms-linear-gradient(top, #6aadd5 0%, #84c1dd 100%); background:linear-gradient(to bottom, #6aadd5,#84c1dd);  color: #fff; border-radius: 5px; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);  -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); cursor: pointer}
+h1 {color: #ed8b22; text-align: center; font-size: 35px; font-family: 나눔고딕, NanumGothic; font-weight: 800; padding-top: 40px; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); }
+h1 span {display: block; font-size: 18px; color: #fff; font-weight: 600; padding-top: 10px;}
+body {background: url("../images/darkBG.jpg");}
+#page {position: absolute; top: 190px; bottom:60px; left:70px; right:70px;}
+.bg_a {position: absolute; top: 170px; bottom:40px; left:50px; right:67px; background: rgba(0,0,0,0.2); border-radius: 20px; box-shadow:  inset 0 0 30px rgba(0,0,0,0.3);}
+.bg_a.ie {right:50px;}
+#viewport {height: 100%; }
+#box {height: 100%;  border-radius: 20px; -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43);}
+.slide {width:100%; height: 100%; background: url("../images/slideBg.jpg"); border-radius: 20px;}
+.inner {padding: 20px; height: 100%;}
+.table_wrap { overflow-y: scroll; max-height: 100%;}
+.table {width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center;}
+.table th { background:linear-gradient(to bottom, #6aadd5,#84c1dd); filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#6aadd5', endColorstr='#84c1dd'); line-height: 30px; height: 30px; font-size: 13px; border-right: 1px solid #ebf0f4; color: #fff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);  text-align: center;}
+.table td {text-align: center; font-size: 12px; padding: 10px; background: #ccc; border-bottom: 1px solid #ebf0f4; border-right: 1px solid #ebf0f4;}
+.slider-controls {position: absolute; top: -50px; right: 30px; color: #fff; font-family: 나눔고딕, NanumGothic;}
+.slider-controls a {color: #fff; text-decoration: none; font-weight: 600; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);}
+
+.tooltip {padding:10px; width: 250px; position: absolute; top:0; left: 0; z-index: 100; background: #fff; display: none; box-shadow: 4px 4px 10px #000;}
+.tooltip table {table-layout: fixed; border-collapse: collapse; width: 100%;}
+.tooltip table th {background:linear-gradient(to bottom, #6aadd5,#84c1dd); line-height: 20px; height: 20px; font-size: 13px; border-right: 1px solid #ebf0f4; color: #fff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);}
+.tooltip table td {text-align: center !important; font-size: 12px; height: 20px; background: #ccc; border-bottom: 1px solid #ebf0f4; border-right: 1px solid #ebf0f4;}
+
+.selectArea {position: absolute; top: -60px; left: 30px;}
+.selectArea select {padding: 7px; font-weight: 800;}
+
+.ng-modal-overlay {
+  /* A dark translucent div that covers the whole screen */
+  position:absolute;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  /* A centered div above the overlay with a box shadow. */
+  z-index:10000;
+  position: absolute;
+  width: 50%; /* Default */
+
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
+  color: #fff;
+}
+
+.ng-modal-dialog h2 {font-size: 16px; font-weight: 800; color: #fff; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); background: #333; height: 60px; line-height: 60px; padding-left: 10px}
+.ng-modal-dialog .table_wrapper {padding: 10px;}
+.ng-modal-dialog .table_wrapper h3 {padding: 10px 0 12px 0; font-size: 14px}
+.ng-modal-dialog .table td {padding-left: 0; padding-right: 0}
+.ng-modal-dialog .table td input[type=text] {width: 80%; vertical-align: middle}
+.ng-modal-dialog .table td input.half {width: 40%}
+.ng-modal-dialog .table td input[type=checkbox] {vertical-align: middle; margin-left: 5px}
+
+.btn_area {text-align: right; padding:0 10px 0 0;}
+.btn_area button {font-weight: 800; font-size: 13px; padding: 5px 10px; border: 1px solid #ccc; background:#777; background:linear-gradient(to bottom, #ccc,#777); color: #fff; border-radius: 5px; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);  -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.43); cursor: pointer}
+.btn_area button.blue {background: #6aadd5; background:linear-gradient(to bottom, #6aadd5,#84c1dd); border: 1px solid #005fb3;}
+
+.btn_graphLayout {position: absolute; top: 20px; right: 20px; z-index: 10; padding: 5px}

@@ -1,0 +1,91 @@
+<h1>
+    {{viewPage.label}}  <span ng-if="viewPage.desciprtion">({{viewPage.desciprtion}})</span>
+</h1>
+<div class="top_btn" ng-click='toggleModal()'>자원추가</div>
+<div ng-class="bgClass"></div>
+<div id="page">
+    <div id="viewport">
+        <div id="box">
+            <div class="slide jbs-current">
+                <div id="chart-container"></div>
+                <button ng-click="graphLayout()" class="btn_graphLayout">{{graphMode=='preset' ? '동적 레이아웃' : '정적 레이아웃'}}</button>
+            </div>
+            <div class="slide">
+                <div class="inner">
+                    <div class="table_wrap">
+                        <table class="table">
+                            <tr>
+                                <th>종류</th>
+                                <th>서버명</th>
+                                <th>IP</th>
+                                <th>OS</th>
+                                <th>담당자</th>
+                                <th>연락처</th>
+                            </tr>
+                            <tr ng-repeat="row in data.nodes" ng-if=" row.data.properties.name != undefined ">
+                                <td>{{row.data.properties.type}}</td>
+                                <td>{{row.data.properties.name}}</td>
+                                <td>{{row.data.properties.IP}}</td>
+                                <td>{{row.data.properties.OS}}</td>
+                                <td>{{row.data.properties.admin_name}}</td>
+                                <td>{{row.data.properties.admin.phone}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav class="slider-controls">
+            <a class="increment-control" href="#" id="next" title="go to the next slide">{{btnMsg}}</a>
+        </nav>
+        <div class="selectArea">
+            <select ng-model="viewPage" ng-options="viewPage.label for viewPage in viewList" ng-change="pageMove()"></select>
+        </div>
+    </footer>
+</div>
+
+<modal-directive show='modalShown' width='95%' height='95%' >
+    <div>
+        <h2>자원 추가</h2>
+        <div class="table_wrapper">
+            <h3>장비목록에 추가되거나 수정된 사항을 반영합니다.</h3>
+            <table class="table">
+                <tr>
+                    <th>H/W ID</th>
+                    <th>명칭</th>
+                    <th>IP</th>
+                    <th>구축일</th>
+                    <th>아이디</th>
+                    <th>관리자</th>
+                    <th>부처</th>
+                    <th>부서</th>
+                    <th>OS</th>
+                    <th>위치</th>
+                </tr>
+                <tr ng-repeat="item in addTEmpData.nodes">
+                    <td><input type="text" ng-model="item.data.properties.hw_id" readonly/></td>
+                    <td><input type="text" ng-model="item.data.properties.name" readonly/></td>
+                    <td><input type="text" ng-model="item.data.properties.IP" readonly/></td>
+                    <td><input type="text" ng-model="item.data.properties.date" readonly /></td>
+                    <td><input type="text" ng-model="item.data.properties.admin_id" readonly/></td>
+                    <td><input type="text" ng-model="item.data.properties.admin_name" readonly/></td>
+                    <td><input type="text" class="half" ng-model="item.data.properties.department_code" readonly/><input type="checkbox" checked readonly> </td>
+                    <td><input type="text" class="half" ng-model="item.data.properties.division_code" readonly/><input type="checkbox" checked readonly></td>
+                    <td><input type="text" ng-model="item.data.properties.OS" readonly/></td>
+                    <td><input type="text" ng-model="item.data.properties.location" readonly/></td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn_area">
+            <button class="blue" ng-click="addFn()">등록</button>
+            <button>수정</button>
+            <button>목록 </button>
+        </div>
+    </div>
+</modal-directive>
+
+<div class="tooltip">
+
+</div>
